@@ -33,15 +33,29 @@ green = [
   'park st',
   'boylston',
   'arlington',
-  'copley'];
+  'copley'
+  ];
 
-var stopsBetween = function(startLine, startStop, destLine, destStop) {
-  var totalStops;
 
-  if (startLine === destLine) {
-    totalStop
-  }
-  console.log(totalStops);
-  return totalStops;
+
+var sameLine = function( start, stop, line) {
+
 };
 
+
+
+var find = function(array, value) { //find value
+  for (i = 0; i < array.length; i++) {
+    if (array[i] === value) {
+      return [i];
+      }
+    }
+    return -1;
+  };
+
+
+
+var tester = function() {
+  console.log('Find should return 2, actually returns ' + find(['a', 'b', 'c'], 'c'));
+console.log('Find should return -1, actually returns ' + find(['a', 'b', 'c'], 'z'));
+};
