@@ -51,13 +51,14 @@ var stopsBetween = function(startLine, startStation, stopLine, stopStation) {
 
 // tester function tests same line routes and changing line routes
 var tester = function() {
+  // same line tests
   console.log('stops between on same line');
   console.log('* should return 1, actually returns ' + stopsBetween(red, 'south station', red, 'park st'));
   console.log('* should return 4, actually returns ' + stopsBetween(red, 'kendall', red, 'davis'));
   console.log('* should return 1, actually returns ' + stopsBetween(orange, 'back bay', orange, 'forest hills'));
   console.log('* should return 3, actually returns ' + stopsBetween(orange, 'north station', orange, 'state'));
   console.log('* should return 1, actually returns ' + stopsBetween(green, 'arlington', green, 'copley'));
-
+  // different line tests
   console.log('stops between different lines');
   console.log('* should return 5, actually returns ' + stopsBetween(green, 'arlington', red, 'harvard'));
   console.log('* should return 1, actually returns ' + stopsBetween(red, 'south station', orange, 'park st'));
