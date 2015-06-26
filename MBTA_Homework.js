@@ -49,6 +49,7 @@ var stopsBetween = function(startLine, startStation, stopLine, stopStation) {
 };
 
 
+// tester function tests same line routes and changing line routes
 var tester = function() {
   console.log('stops between on same line');
   console.log('* should return 1, actually returns ' + stopsBetween(red, 'south station', red, 'park st'));
