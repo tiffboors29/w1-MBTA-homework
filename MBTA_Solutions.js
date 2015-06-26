@@ -51,6 +51,13 @@ var sameLine = function(line, firstStop, secondStop) {
 };
 
 
+var distance = function(firstLine, firstStop, secondLine, secondStop) {
+  if (firstLine === secondLine) {
+    return sameLine(firstLine, firstStop, secondStop);
+  } else {
+    return  sameLine(firstLine, firstStop, 'park st') + sameLine(secondLine, 'park st', secondStop);
+  }
+}
 
 var find = function(array, value) { //find value
   for (var i = 0; i < array.length; i++) {
@@ -74,6 +81,16 @@ var tester = function() {
   console.log('* should return 3, actually returns ' + sameLine(orange, 'north station', 'state'));
   console.log('* should return 1, actually returns ' + sameLine(green, 'arlington', 'copley'));
   console.log('* should return 5, actually returns ' + sameLine(green, 'haymarket', 'copley'));
+  console.log('distance function');
+  console.log('* should return 1, actually returns ' + distance(red, 'south station', 'park st'));
+  console.log('* should return 4, actually returns ' + distance(red, 'kendall', 'davis'));
+  console.log('* should return 1, actually returns ' + distance(orange, 'back bay', 'forest hills'));
+  console.log('* should return 3, actually returns ' + distance(orange, 'north station', 'state'));
+  console.log('* should return 1, actually returns ' + distance(green, 'arlington', 'copley'));
+  console.log('* should return 5, actually returns ' + distance(green, 'arlington', red, 'harvard'));
+  console.log('* should return 1, actually returns ' + distance(red, 'south station', orange, 'park st'));
+  console.log('* should return 3, actually returns ' + distance(orange, 'north station', green, 'boylston'));
+  console.log('* should return 6, actually returns ' + distance(green, 'arlington', red, 'porter'));
 };
 
 tester();
